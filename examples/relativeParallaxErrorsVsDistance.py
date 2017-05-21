@@ -43,7 +43,7 @@ def makePlot(pdf=False, png=False):
   fig=plt.figure(figsize=(10,6.5))
   currentAxis=plt.gca()
 
-  for spt in sptVabsAndVmini.keys():
+  for spt in list(sptVabsAndVmini.keys()):
     vmag=sptVabsAndVmini[spt][0]+5.0*logdistancekpc+10.0
     indices=(vmag>14) & (vmag<16)
     gmag=vmag+gminvFromVmini(sptVabsAndVmini[spt][1])

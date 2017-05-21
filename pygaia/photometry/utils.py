@@ -27,7 +27,7 @@ def vminiFromSpt(spt):
     return _sptToVminiVabsDictionary[spt][0]
   else:
     message="Unknown spectral type. Allowed values are: "
-    for key in _sptToVminiVabsDictionary.keys():
+    for key in list(_sptToVminiVabsDictionary.keys()):
       message += key+" "
     raise Exception(message)
 
@@ -49,7 +49,7 @@ def vabsFromSpt(spt):
     return _sptToVminiVabsDictionary[spt][1]
   else:
     message="Unknown spectral type. Allowed values are: "
-    for key in _sptToVminiVabsDictionary.keys():
+    for key in list(_sptToVminiVabsDictionary.keys()):
       message += key+" "
     raise Exception(message)
 
@@ -71,6 +71,6 @@ def gabsFromSpt(spt):
     return vabsFromSpt(spt) + gminvFromVmini(vminiFromSpt(spt))
   else:
     message="Unknown spectral type. Allowed values are: "
-    for key in _sptToVminiVabsDictionary.keys():
+    for key in list(_sptToVminiVabsDictionary.keys()):
       message += key+" "
     raise Exception(message)
